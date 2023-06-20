@@ -17,7 +17,3 @@ class Counter:
         value (int, optional): The value to increase the counter. Defaults to 1.
     """
     self.count += value
-
-counter = Counter()
-
-travel_counter = Counter()

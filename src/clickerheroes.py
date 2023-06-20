@@ -8,14 +8,16 @@ from rich.panel import Panel
 from rich.prompt import Confirm
 
 from ui.icons import SCRIPT, INTERROGATIVE
-from utils.mouse import click
-from utils.counter import counter, travel_counter
-from utils.datetime import get_time_and_datetime
+from core.counter import Counter
+from core.datetime import get_time_and_datetime
 
 
 def main():
   initial_execution_time = time.time()
   initial_time, initial_datetime = get_time_and_datetime()
+
+  counter = Counter()
+  travel_counter = Counter()
 
   print(f'{SCRIPT} The program is running... - {initial_time}')
 

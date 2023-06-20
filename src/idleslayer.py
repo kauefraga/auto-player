@@ -1,53 +1,45 @@
-"""A script made with pyautogui to play Idle Slayer automatically."""
+"""A script made with pag to play Idle Slayer automatically."""
 # screen 1366x768
-import pyautogui
+import pyautogui as pag
 import keyboard
 import time
 from colorama import just_fix_windows_console, Fore, Style
 from numpy.random import uniform
-def click(x: int, y: int, delay: float):
-  """Press the left mouse button and release it at a specified delay"""
-  pyautogui.mouseDown(
-    x, y,
-    button='left',
-    duration=0.75
-  )
-  pyautogui.sleep(delay)
-  pyautogui.mouseUp()
-from utils.datetime import get_time_and_datetime
-from utils.counter import counter
 
+from core.mouse import click
+from core.counter import Counter
+from core.datetime import get_time_and_datetime
 
-def screenshot(filename: str):
-  pyautogui.screenshot(f'{filename}.png')
 
 def main():
   initial_execution_time = time.time()
   initial_time, initial_datetime = get_time_and_datetime()
 
+  counter = Counter()
+
   print('[script] The program is running... -', initial_time)
 
   print('[script] Taking screenshot...')
-  screenshot(initial_datetime) # hour.minute-day.month.year
+  pag.screenshot(f'{initial_datetime}.png') # hour.minute-day.month.year
 
   while keyboard.is_pressed('q') != True:
     # Get offline/temporally rewards
-    if pyautogui.pixel(710, 15)[2] == 0:
-      pyautogui.click(710, 15, button='left')
-      pyautogui.sleep(uniform(0.1, 0.3))
+    if pag.pixel(710, 15)[2] == 0:
+      pag.click(710, 15, button='left')
+      pag.sleep(uniform(0.1, 0.3))
 
     # Check if the portal is available
-    if pyautogui.pixel(1240, 90)[2] == 153:
+    if pag.pixel(1240, 90)[2] == 153:
       # click in the portal icon
-      pyautogui.click(1240, 90)
-      pyautogui.sleep(uniform(0.1, 0.3))
+      pag.click(1240, 90)
+      pag.sleep(uniform(0.1, 0.3))
       # press "yes"
-      pyautogui.click(580, 590)
-      pyautogui.sleep(uniform(0.5, 1))
+      pag.click(580, 590)
+      pag.sleep(uniform(0.5, 1))
 
     # Sprint
-    if pyautogui.pixel(100, 630)[2] == 155:
-      pyautogui.click(100, 630, button='left')
+    if pag.pixel(100, 630)[2] == 155:
+      pag.click(100, 630, button='left')
 
     # Jump and shoot with bow
     click(650, 380, uniform(0.1, 0.3))
@@ -56,7 +48,7 @@ def main():
   end_time, end_datetime = get_time_and_datetime()
 
   print('[script] Another screenshot...')
-  screenshot(end_datetime)
+  pag.screenshot(f'{end_datetime}.png')
   print('[script] Done! Your screenshots are available at .')
 
   print(f'[script] Totally, you jump/shoot {Fore.RED}{counter.count}{Style.RESET_ALL} times')
@@ -67,7 +59,7 @@ def main():
 
 if __name__ == '__main__':
   # Settings
-  pyautogui.PAUSE = 0.1 # delay after all the commands
+  pag.PAUSE = 0.1 # delay after all the commands
   just_fix_windows_console() # colorama
 
   main()

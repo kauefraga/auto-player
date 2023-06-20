@@ -19,10 +19,10 @@
 ## ⬇️ How to download and use it in your game
 
 1. Open the game
-2. Run the file `src/main.py`
+2. Run the file `src/idleslayer.py`
 
 ```bash
-python src/main.py # if you have python2, you should run py or python3 instead
+python src/idleslayer.py # if you have python2, you should run py or python3 instead
 ```
 
 ## 📜 Coming soon

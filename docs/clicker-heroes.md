@@ -22,7 +22,7 @@
 2. Run the script
 
 ```bash
-python src/main.py # if you have python2, you should run py or python3 instead
+python src/clickerheroes.py # if you have python2, you should run py or python3 instead
 ```
 
 ### ⚙ Cheat Engine

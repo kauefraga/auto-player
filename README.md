@@ -33,8 +33,8 @@
 
 The list below is about the games that i have a script for
 
-- [Clicker Heroes](packages/clicker-heroes)
-- [Idle Slayer](packages/idle-slayer)
+- [Clicker Heroes](docs/clicker-heroes.md)
+- [Idle Slayer](docs/idle-slayer.md)
 
 ## 🎲 Prerequisites
 
@@ -44,7 +44,7 @@ The list below is about the games that i have a script for
 
 1. Clone the repository
 2. Install the dependencies
-3. Choose a package and read its documentation
+3. Choose a game and read its documentation
 
 ```bash
 git clone https://github.com/kauefraga/auto-player.git

@@ -1,0 +1,4 @@
+pyautogui==0.9.54
+Pillow==9.5.0
+keyboard==0.13.5
+rich==13.4.2

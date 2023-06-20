@@ -25,6 +25,13 @@
 python src/idleslayer.py # if you have python2, you should run py or python3 instead
 ```
 
+### ⚙ Cheat Engine
+
+A list of things you can search for with CE.
+
+- Coins (type double)
+- Souls/kill points (type double)
+
 ## 📜 Coming soon
 
 - If some key is pressed, open the ascension menu and then ascend (you can also check the vassals menu)

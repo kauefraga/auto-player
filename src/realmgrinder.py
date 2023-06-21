@@ -5,8 +5,10 @@ import keyboard
 import pyautogui as pag
 from numpy.random import uniform
 from rich import print
+from rich.prompt import Confirm
+from rich.panel import Panel
 
-from ui.icons import SCRIPT
+from ui.icons import INTERROGATIVE, SCRIPT
 from core.mouse import click
 from core.counter import Counter
 
@@ -25,7 +27,7 @@ def main():
     # x1100 y80
 
     # Get coins by touching on the realm
-    click(650, 400, uniform(0.01, 0.03))
+    click(650, 400, uniform(0.001, 0.003))
     counter.add_counter()
 
   print(f'{SCRIPT} Coins was collected: [green1]{counter.count}[/] times')
@@ -34,5 +36,12 @@ def main():
 
 
 if __name__ == '__main__':
+  print(Panel(
+    '- The game is on screen;\n' +
+    '- You do not need to do anything else while it is running.',
+    title='[b magenta]Verify if'))
+
+  if not Confirm.ask(f'{INTERROGATIVE} Are you ready to run it?'):
+    exit(0)
 
   main()
